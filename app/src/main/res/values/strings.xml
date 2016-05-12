@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="contacto">Contacto</string>
+    <string name="about">Acerca De ..</string>
+    <string name="nombre">Nombre</string>
+    <string name="descripcion">Comentario</string>
+    <string name="email">E-mail</string>
+    <string name="btn_enviar">Enviar Comentario</string>
+    <string name="passwor">Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

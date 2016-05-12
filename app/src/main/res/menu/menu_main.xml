@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cristian.persistencia.MainActivity">
+    <item
+        android:id="@+id/contacto"
+        android:orderInCategory="100"
+        android:title="@string/contacto"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="200"
+        android:title="@string/about"
+        app:showAsAction="never" />
+</menu>

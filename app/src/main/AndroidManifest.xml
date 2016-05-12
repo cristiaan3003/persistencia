@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cristian.persistencia">
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.cristian.persistencia.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cristian.persistencia.About"
+            android:parentActivityName="com.cristian.persistencia.MainActivity"
+            >
+
+            <!-- soporte versiones anteriores a andorid 4 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cristian.persistencia.MainActivity"></meta-data>
+        </activity>
+
+        <activity android:name="com.cristian.persistencia.Detalle"
+            android:parentActivityName="com.cristian.persistencia.MainActivity"
+            >
+
+            <!-- soporte versiones anteriores a andorid 4 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cristian.persistencia.MainActivity"></meta-data>
+        </activity>
+
+        <activity android:name="com.cristian.persistencia.Contacto"
+            android:parentActivityName="com.cristian.persistencia.MainActivity"
+            >
+            <!-- soporte versiones anteriores a andorid 4 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cristian.persistencia.MainActivity"></meta-data>
+        </activity>
+    </application>
+
+</manifest>

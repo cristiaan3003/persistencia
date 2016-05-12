@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.cristian.persistencia.fragments.RecyclerViewFragment">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imagenCircular"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/perro1"
+        android:layout_centerHorizontal="true"
+        app:civ_border_color="#EEEEEE"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_border="false"
+        app:civ_shadow_radius="10"
+        app:civ_shadow_color="#8BC34A"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Mascota"
+        android:id="@+id/textViewPerfil"
+        android:layout_below="@+id/imagenCircular"
+        android:layout_centerHorizontal="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textViewPerfil"
+
+        android:id="@+id/rv_perfil"
+        />
+
+
+
+</RelativeLayout>
