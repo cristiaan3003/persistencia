@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.cristian.persistencia.R;
 import com.cristian.persistencia.adapter.RVAdapter;
-import com.cristian.persistencia.pojo.Mascota;
+import com.cristian.persistencia.pojo.model.Mascota;
 
 import java.util.ArrayList;
 
@@ -35,7 +35,6 @@ public class PrefilFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this persistencia
         View v =  inflater.inflate(R.layout.fragment_prefil, container, false);
-
 
         //ADAPTER
         //---------------------------------------------------------------------------------

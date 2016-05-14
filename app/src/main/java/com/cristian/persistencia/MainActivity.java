@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.toolbar_title)).setText("Pentagram");
         setupViewPager();
 
+
+
+
     }
 
     private ArrayList<Fragment>agregarFragments(){
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void  setupViewPager(){
-             viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
+             viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));//agrego los fragments
              tabLayout.setupWithViewPager(viewPager);
              tabLayout.getTabAt(0).setIcon(R.drawable.ic_contacts);
              tabLayout.getTabAt(1).setIcon(R.drawable.wolf_48);

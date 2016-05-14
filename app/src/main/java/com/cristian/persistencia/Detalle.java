@@ -11,13 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cristian.persistencia.adapter.RVAdapter;
-import com.cristian.persistencia.pojo.Mascota;
+import com.cristian.persistencia.pojo.DBHelperMascota;
+import com.cristian.persistencia.pojo.model.Mascota;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Detalle extends AppCompatActivity {
     ImageView imagenDerecha;
     ArrayList mascotas;
+    DBHelperMascota helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,26 +33,27 @@ public class Detalle extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+
+        helper = new DBHelperMascota(Detalle.this);
         mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota("Mascota 3", 10, R.drawable.perro3));
-        mascotas.add(new Mascota("Mascota 1", 8, R.drawable.perro1));
-        mascotas.add(new Mascota("Mascota 7", 5, R.drawable.perro7));
-        mascotas.add(new Mascota("Mascota 4", 4, R.drawable.perro4));
-        mascotas.add(new Mascota("Mascota 5", 1, R.drawable.perro5));
+        mascotas = helper.getMascotas();
+        Collections.sort(mascotas);// ordeno de forma ascendente a cantidad de likes
+        mascotas= new ArrayList<>(mascotas.subList(0,5));//me quedo los 5 que tienen mas cantidad de likes
 
+        if (!mascotas.isEmpty()) {
 
-        RecyclerView rv = (RecyclerView)findViewById(R.id.rv_detalle);
-        rv.setHasFixedSize(true);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rv.setLayoutManager(llm);
-        rv.setClickable(false);
-        rv.setEnabled(false);
-        rv.setLayoutFrozen(true);
-        rv.setItemAnimator(new DefaultItemAnimator());
-        RVAdapter adapter = new RVAdapter(mascotas);//paso listado al adaptador
-        rv.setAdapter(adapter);
-
+            RecyclerView rv = (RecyclerView) findViewById(R.id.rv_detalle);
+            rv.setHasFixedSize(true);
+            LinearLayoutManager llm = new LinearLayoutManager(this);
+            llm.setOrientation(LinearLayoutManager.VERTICAL);
+            rv.setLayoutManager(llm);
+            rv.setClickable(false);
+            rv.setEnabled(false);
+            rv.setLayoutFrozen(true);
+            rv.setItemAnimator(new DefaultItemAnimator());
+            RVAdapter adapter = new RVAdapter(mascotas);//paso listado al adaptador
+            rv.setAdapter(adapter);
+        }
 
         
     }
